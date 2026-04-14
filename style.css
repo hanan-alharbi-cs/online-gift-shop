@@ -1,0 +1,328 @@
+/* ======================== RESET ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #ffe9f0, #f3f4ff);
+    color: #1f2933;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ======================== HEADER ======================== */
+header {
+    padding: 16px 7vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #b83280;
+}
+
+.nav-links {
+    display: flex;
+    gap: 16px;
+    font-size: 0.95rem;
+}
+
+.nav-links a {
+    color: #4b5563;
+    padding: 6px 10px;
+    border-radius: 999px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: white;
+    color: #111827;
+}
+
+.nav-cart {
+    background: white;
+    border-radius: 999px;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    box-shadow: 0 8px 20px #0000000a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Cart Icon */
+.nav-cart .icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    border: 2px solid #b83280;
+    position: relative;
+}
+.nav-cart .icon::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background: #b83280;
+    top: -3px;
+    left: 3px;
+}
+
+/* ======================== HERO ======================== */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 7vw 60px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
+    gap: 32px;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+}
+
+@media(max-width:850px){
+    .hero { grid-template-columns: 1fr; text-align:center; }
+}
+
+.category-label { margin-top:24px; color:#6b7280; }
+.categories {
+    margin-top:10px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.category-btn {
+    border:none;
+    padding:9px 18px;
+    border-radius:999px;
+    font-size:0.95rem;
+    background:white;
+    color:#374151;
+    cursor:pointer;
+    box-shadow:0 8px 20px #0000000a;
+    transition:.2s;
+}
+.category-btn:hover,
+.category-btn.active {
+    background:#b83280;
+    color:white;
+    transform:translateY(-2px);
+}
+
+/* Right Card */
+.hero-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 24px;
+    padding: 26px 26px 36px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    min-height: 300px; /* ←← زيادة ارتفاع البطاقة */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* يجعل المحتوى في المنتصف */
+}
+
+.hero-card::before {
+    content:"";
+    position:absolute;
+    width:200px;
+    height:200px;
+    background:rgba(248,113,113,0.2);
+    border-radius:50%;
+    top:-40px;
+    left:-40px;
+}
+
+.hero-card::after {
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    background:rgba(129,140,248,0.2);
+    border-radius:30%;
+    bottom:-60px;
+    right:-40px;
+}
+
+/* ======================== PRODUCT GRID ======================== */
+
+.products-wrapper {
+    padding: 40px 7vw;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+    gap: 26px;
+}
+
+.product-card {
+    background:white;
+    border-radius:20px;
+    padding:14px;
+    box-shadow:0 14px 30px #00000015;
+    transition:.25s;
+}
+.product-card:hover {
+    transform:scale(1.04);
+}
+
+.product-card img {
+    width:100%;
+    border-radius:14px;
+}
+
+.price {
+    margin-top:8px;
+    color:#b83280;
+    font-weight:bold;
+}
+
+/* ======================== PRODUCT DETAILS ======================== */
+.details-container {
+    display:flex;
+    gap:40px;
+    padding:40px 7vw;
+    max-width:1100px;
+    margin:auto;
+}
+.details-container img {
+    border-radius:20px;
+    width:360px;
+}
+.details-content {
+    padding-top:10px;
+}
+.btn {
+    background:#b83280;
+    padding:10px 20px;
+    border-radius:999px;
+    margin-top:20px;
+    color:white;
+    display:inline-block;
+    cursor:pointer;
+    transition:0.2s ease;
+}
+.btn:hover {
+    transform:scale(1.05);
+}
+
+/* =================== CART ITEM NEW STYLE =================== */
+
+.cart-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 18px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.10);
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: 0.2s;
+}
+
+.cart-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(184, 50, 128, 0.25);
+}
+
+.cart-item img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    background: #fff;
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.cart-item .item-info {
+    flex: 1;
+}
+
+.cart-item .item-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #b83280;
+    margin-bottom: 6px;
+}
+
+.cart-item .item-price {
+    color: #444;
+    font-size: 1rem;
+}
+
+.cart-item button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cart-item button:hover {
+    background: #e60036;
+}
+
+
+/* ======================== CHECKOUT ======================== */
+.form-box {
+    background:white;
+    padding:30px;
+    margin:auto;
+    width:85%;
+    max-width:500px;
+    border-radius:20px;
+    box-shadow:0 20px 40px #00000020;
+}
+
+input {
+    width:100%;
+    padding:12px;
+    margin-top:6px;
+    margin-bottom:14px;
+    border-radius:12px;
+    border:1px solid #ddd;
+}
+
+/* ======================== FOOTER ======================== */
+footer {
+    padding:20px;
+    text-align:center;
+    color:#6b7280;
+    margin-top:auto;
+}
+
+.product-card .img-box {
+    width: 100%;
+    height: 220px; /* يمكنك تعديل الارتفاع إذا أردت */
+    border-radius: 14px;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
